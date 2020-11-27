@@ -1,0 +1,49 @@
+{%- set observations -%}
+<p>
+  [ Enter observations ]
+</p>
+{%- endset -%}
+
+{% set section = {
+  title: 'Read all page content',
+  id: 'read-all-page-content'
+} %}
+
+<section aria-describedby="{{section.id}}">
+  <h2 id="{{section.id}}">
+    {{section.title}}
+  </h2>
+  <p>
+    Confirm that the content on the page can be read by NVDA and that the navigation and page content follow a logical reading order.
+  </p>
+
+  <h3 id="how-to-check-{{section.id}}">
+    How to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <ol>
+    <li>Press <span class="at-keys">CTRL + Home</span> to go to the top of the page</li>
+    <li>Press <span class="at-keys">Insert + Down Arrow</span> to read all content from current position</li>
+    <li>Listen to all of the page content</li>
+  </ol>
+
+  <h3 id="what-to-check-{{section.id}}">
+    What to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <p>
+    Confirm that:
+    <ul>
+      <li>all content is read out correctly</li>
+      <li>all content follows a logical reading order</li>
+      <li>the context is consistent between what is visible and what is read out</li>
+      <li>content is not repeated; unless the repeated content is intentional in the design</li>
+      <li>icons are read out in a meaningful way</li>
+      <li>images have meaningful alternative text</li>
+      <li>content does not rely on sensory characteristics, for example: "On the left"</li>
+    </ul>
+  </p>
+
+  <h3 id="observations-{{section.id}}">
+    Observations<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  {{- observations | safe -}}
+</section>

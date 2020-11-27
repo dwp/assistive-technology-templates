@@ -1,0 +1,18 @@
+.at-back-to-top__icon { padding-right: .5rem; }
+
+@media screen and (min-width: 1080px) {
+  .at-back-to-top {
+    position: absolute;
+    top: 120vh;
+    bottom: 0rem;
+    left: -10rem;
+    padding: 0;
+  }
+
+  .at-back-to-top__link {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90vh;
+    padding: 0;
+  }
+}

@@ -1,0 +1,44 @@
+{%- set observations -%}
+<p>
+  [ Enter observations ]
+</p>
+{%- endset -%}
+
+{% set section = {
+  title: 'Dynamic content',
+  id: 'dynamic-content'
+} %}
+
+<section aria-describedby="{{section.id}}">
+  <h2 id="{{section.id}}">
+    {{section.title}}
+  </h2>
+  <p>
+    Pop-ups, modals and expanded sections should be announced. Anything which causes the page content to change without refreshing must be available to screenreader users.
+  </p>
+
+  <h3 id="how-to-check-{{section.id}}">
+    How to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <ol>
+    <li>Activate the element which triggers the dynamic content to change</li>
+    <li>Wait for the screen reader to finish talking</li>
+    <li>Observe whether the changes were announced</li>
+  </ol>
+
+  <h3 id="what-to-check-{{section.id}}">
+    What to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <p>
+    Confirm that:
+    <ul>
+      <li>when content changed dynamically the screenreader notifies you of changes</li>
+      <li>the announcement is polite, and does not interrupt the screenreader unless it is an emergency</li>
+    </ul>
+  </p>
+
+  <h3 id="observations-{{section.id}}">
+    Observations<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  {{- observations | safe -}}
+</section>

@@ -1,0 +1,45 @@
+{%- set observations -%}
+<p>
+  [ Enter observations ]
+</p>
+{%- endset -%}
+
+{% set section = {
+  title: 'Links make sense out of context',
+  id: 'links-make-sense-out-of-context'
+} %}
+
+<section aria-describedby="links-make-sense-out-of-context">
+  <h2 id="links-make-sense-out-of-context">
+    Links make sense out of context
+  </h2>
+  <p>
+    Every link should be predictable, even if the surrounding context is removed. No links should just say 'Read more' or 'click here'.
+  </p>
+  
+  <h3 id="how-to-check-links-make-sense-out-of-context">
+    How to check<span class="at-visually-hidden">: Links make sense out of context</span>
+  </h3>
+  <ol>
+    <li>Press <span class="at-keys">Insert + F7</span> to open the Element list</li>
+    <li>Navigate to the links list</li>
+    <li>Check every link</li>
+  </ol>
+
+  <h3 id="what-to-check-links-make-sense-out-of-context">
+    What to check<span class="at-visually-hidden">: Links make sense out of context</span>
+  </h3>
+  <p>
+    Confirm that:
+    <ul>
+      <li>all links make sense out of context</li>
+      <li>all links work and their destination is expected</li>
+      <li>no links have the same description but different destinations</li>
+    </ul>
+  </p>
+
+  <h3 id="observations-links-make-sense-out-of-context">
+    Observations<span class="at-visually-hidden">: Links make sense out of context</span>
+  </h3>
+  {{- observations | safe -}}
+</section>

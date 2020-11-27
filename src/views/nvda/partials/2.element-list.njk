@@ -1,0 +1,39 @@
+{%- set observations -%}
+<p>
+  [ Enter observations ]
+</p>
+{%- endset -%}
+
+{% set section = {
+  title: 'Element list',
+  id: 'element-list'
+} %}
+
+<section aria-describedby="{{section.id}}">
+  <h2 id="{{section.id}}">
+    {{section.title}}
+  </h2>
+  <p>
+    Confirm elements list is comprehensive.
+  </p>
+
+  <h3 id="how-to-check-{{section.id}}">
+    How to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <ol>
+    <li>Press <span class="at-keys">Insert + F7</span> to display the "Element list"</li>
+    <li>Navigate between the sections and check that what is on the page is reflected correctly</li>
+  </ol>
+
+  <h3 id="what-to-check-{{section.id}}">
+    What to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <p>
+    Confirm that for each element in each category, it is read our correctly and can be interacted with.
+  </p>
+
+  <h3 id="observations-{{section.id}}">
+    Observations<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  {{- observations | safe -}}
+</section>

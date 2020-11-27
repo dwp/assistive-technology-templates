@@ -1,0 +1,13 @@
+<h2 id="details">
+  Details
+</h2>
+<dl class="at-inline">
+  <dt>URL:</dt><dd><a href="{{data.site.http}}://{{data.site.url}}/">{{data.site.url}}</a></dd>
+  {% if data.page and (data.page.name !== 'Home') %}
+    <dt>Page:</dt><dd><a href="{{data.site.http}}://{{data.site.url}}{{data.page.url}}/">{{data.page.url}}</a></dd>
+  {% endif %}
+  <dt>Date:</dt><dd>{{data.date}}</dd>
+  <dt>Tester:</dt><dd><a href="{{data.tester.url}}">{{data.tester.name}}</a></dd>
+  <dt>Browser:</dt><dd>{{data.assistiveTech.browser}}</dd>
+  <dt>{{data.assistiveTech.name}}:</dt><dd>{{data.assistiveTech.version}}</dd>
+</dl>

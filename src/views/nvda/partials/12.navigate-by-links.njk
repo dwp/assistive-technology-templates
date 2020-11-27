@@ -1,0 +1,45 @@
+{%- set observations -%}
+<p>
+  [ Enter observations ]
+</p>
+{%- endset -%}
+
+{% set section = {
+  title: 'Navigate by links',
+  id: 'navigate-by-links'
+} %}
+
+<section aria-describedby="{{section.id}}">
+  <h2 id="{{section.id}}">
+    {{section.title}}
+  </h2>
+  <p>
+    A user should be able to navigate the page by links.
+  </p>
+  
+  <h3 id="how-to-check-{{section.id}}">
+    How to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <ol>
+    <li>Press <span class="at-keys">CTRL + Home</span> to navigate to the top of the page</li>
+    <li>Press <span class="at-keys">K</span> to move through each of the links on the page</li>
+  </ol>
+
+  <h3 id="what-to-check-{{section.id}}">
+    What to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <p>
+    Confirm that:<span class="at-visually-hidden">: Navigate by links</span>
+    <ul>
+      <li>you can navigate to every link on the page</li>
+      <li>all links are read out correctly</li>
+      <li>all links are selected in a logical order</li>
+      <li>no hidden links can be selected, skip links should appear when focussed</li>
+    </ul>
+  </p>
+
+  <h3 id="observations-{{section.id}}">
+    Observations<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  {{- observations | safe -}}
+</section>

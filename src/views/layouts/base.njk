@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>{{data.assistiveTech.name}} test from {{data.date}} - {{data.site.name}}</title>
+    <meta name="description" content="{{template.title}}">
+    <style>
+      {# Put CSS in page so it works when downloaded #}
+      {% include 'styles/styles.css' %}
+    </style>
+  </head>
+
+  <body id="top">
+    {% include 'components/skip-link/template.njk' %}
+    <div class="at-container">
+      <header role="banner">
+        <h1 id="{{data.assistiveTech.id}}-testing">
+          {{data.assistiveTech.name}} Testing
+        </h1>
+        {% block headerContent %}{% endblock %}
+      </header>
+
+      {% block nav %}{% endblock %}
+
+      <main id="main" role="main">
+        {% block content %}{% endblock %}
+        {% include 'components/back-to-top/template.njk' %}
+      </main>
+      
+      <footer role="contentinfo">
+        {% block footer %}{% endblock %}
+      </footer>
+    </div>
+  </body>
+</html>

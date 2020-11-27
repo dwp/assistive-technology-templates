@@ -1,0 +1,47 @@
+{%- set observations -%}
+<p>
+  [ Enter observations ]
+</p>
+{%- endset -%}
+
+{% set section = {
+  title: 'Navigate by tables',
+  id: 'navigate-by-tables'
+} %}
+
+<section aria-describedby="{{section.id}}">
+  <h2 id="{{section.id}}">
+    {{section.title}}
+  </h2>
+  <p>
+    A user should be able to navigate the page by tables.
+  </p>
+
+  <h3 id="how-to-check-{{section.id}}">
+    How to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <ol>
+    <li>Press <span class="at-keys">CTRL + Home</span> to navigate to the top of the page</li>
+    <li>Press <span class="at-keys">T</span> to move through each of the form elements on the page</li>
+    <li>Hold <span class="at-keys">Alt</span> and use <span class="at-keys">Arrow Keys</span> to navigate between the columns and rows</li>
+  </ol>
+
+  <h3 id="what-to-check-{{section.id}}">
+    What to check<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  <p>
+    Confirm that:
+  </p>
+  <ul>
+    <li>you can navigate to every table on the page</li>
+    <li>all tables are selected in a logical order</li>
+    <li>all table headings are read out correctly</li>
+    <li>table headings are read out for each cell in the table</li>
+    <li>no hidden tables can be selected</li>
+  </ul>
+  
+  <h3 id="observations-{{section.id}}">
+    Observations<span class="at-visually-hidden">: {{section.title}}</span>
+  </h3>
+  {{- observations | safe -}}
+</section>

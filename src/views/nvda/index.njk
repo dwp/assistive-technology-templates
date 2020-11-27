@@ -1,21 +1,21 @@
 {% extends '../layouts/base.njk' %}
 
 {% set data = {
-  date: '27 November 2020',
+  date: '[date]',
   site: {
-    name: 'DWP Accessibility Manual',
-    http: 'https',
-    url: 'www.accessibilitymanual.com'
+    name: '[site name]',
+    http: '[http or https]',
+    url: 'www.[url].[domain]'
   },
   tester: {
-    name: 'Craig Abbott',
-    url: 'https://github.com/abbott567'
+    name: '[tester name]',
+    url: '[tester contact url]'
   },
   assistiveTech: {
     name: 'NVDA',
     id: 'nvda',
-    browser: 'Chrome 87',
-    version: 'NVDA 2020'
+    browser: '[browser and version]',
+    version: '[assistive tech version]'
   }
 } %}
 

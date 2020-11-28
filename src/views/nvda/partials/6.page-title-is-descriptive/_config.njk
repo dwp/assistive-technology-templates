@@ -1,0 +1,19 @@
+{% set title = 'Page title is descriptive' %}
+{% set id = 'page-title-is-descriptive' %}
+
+{% set description %}
+<p>
+  The page title should describe the current page, the website name and if it is a sub-site it should contain the parent site. For example:<br />
+  <span class="at-keys">What is your name? - Apply for Universal Credit - GOV.UK</span>
+</p>
+<p>
+  With the exception of a home page, the page title should match the H1. For example:<br />
+  <span class="at-keys">h1: What is your name?</span><br />
+  <span class="at-keys">title: What is your name? - Apply for Universal Credit - GOV.UK</span>
+</p>
+<p>
+  If the H1 contains personal information, then the H1 should match as closely as possible. If the service is using analytics software, the page title will be sent and stored, so personally identifiable information should never be used in the page title. For example:<br />
+  <span class="at-keys">h1: What is John Smith's date of birth?</span><br />
+  <span class="at-keys">title: What is your partners date of birth?</span>
+</p>
+{% endset %}

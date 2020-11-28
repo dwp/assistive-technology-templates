@@ -1,53 +1,37 @@
 {% extends 'views/layouts/base.njk' %}
 
-{% set data = {
-  date: '[date]',
-  site: {
-    name: '[site name]',
-    http: '[http or https]',
-    url: 'www.[url].[domain]'
-  },
-  tester: {
-    name: '[tester name]',
-    url: '[tester contact url]'
-  },
-  assistiveTech: {
-    name: 'NVDA',
-    id: 'nvda',
-    browser: '[browser and version]',
-    version: '[assistive tech version]'
-  }
-} %}
+{% set path = 'views/nvda/' %}
+{% from path + 'config.njk' import details %}
 
 {% block headerContent %}
-{% include 'views/nvda/partials/details.njk' %}
-{% include 'views/nvda/partials/about-this-document.njk' %}
+{% include path + 'partials/details.njk' %}
+{% include path + 'partials/about-this-document.njk' %}
 {% endblock %}
 
 {% block nav %}
-{% include 'views/nvda/partials/nav.njk' %}
+{% include path + 'partials/nav.njk' %}
 {% endblock %}
 
 {% block content %}
-{% include 'views/nvda/partials/1.read-all-page-content.njk' %}
-{% include 'views/nvda/partials/2.element-list.njk' %}
-{% include 'views/nvda/partials/3.landmarks-present.njk' %}
-{% include 'views/nvda/partials/4.dynamic-content.njk' %}
-{% include 'views/nvda/partials/5.validation-errors.njk' %}
-{% include 'views/nvda/partials/6.page-title-is-descriptive.njk' %}
-{% include 'views/nvda/partials/7.links-make-sense-out-of-context.njk' %}
-{% include 'views/nvda/partials/8.no-automatic-change-of-context.njk' %}
-{% include 'views/nvda/partials/9.bypass-blocks.njk' %}
-{% include 'views/nvda/partials/10.navigate-by-landmarks.njk' %}
-{% include 'views/nvda/partials/11.navigate-by-headings.njk' %}
-{% include 'views/nvda/partials/12.navigate-by-links.njk' %}
-{% include 'views/nvda/partials/13.navigate-by-lists.njk' %}
-{% include 'views/nvda/partials/14.navigate-by-buttons.njk' %}
-{% include 'views/nvda/partials/15.navigate-by-radio-buttons.njk' %}
-{% include 'views/nvda/partials/16.navigate-by-combo-box-drop-downs.njk' %}
-{% include 'views/nvda/partials/17.navigate-by-checkbox.njk' %}
-{% include 'views/nvda/partials/18.navigate-by-form-element.njk' %}
-{% include 'views/nvda/partials/19.navigate-by-table.njk' %}
+{% include path + 'partials/1.read-all-page-content/index.njk' %}
+{% include path + 'partials/2.element-list/index.njk' %}
+{% include path + 'partials/3.landmarks-present/index.njk' %}
+{% include path + 'partials/4.dynamic-content/index.njk' %}
+{% include path + 'partials/5.validation-errors/index.njk' %}
+{% include path + 'partials/6.page-title-is-descriptive/index.njk' %}
+{% include path + 'partials/7.links-make-sense-out-of-context/index.njk' %}
+{% include path + 'partials/8.no-automatic-change-of-context/index.njk' %}
+{% include path + 'partials/9.bypass-blocks/index.njk' %}
+{% include path + 'partials/10.navigate-by-landmarks/index.njk' %}
+{% include path + 'partials/11.navigate-by-headings/index.njk' %}
+{% include path + 'partials/12.navigate-by-links/index.njk' %}
+{% include path + 'partials/13.navigate-by-lists/index.njk' %}
+{% include path + 'partials/14.navigate-by-buttons/index.njk' %}
+{% include path + 'partials/15.navigate-by-radio-buttons/index.njk' %}
+{% include path + 'partials/16.navigate-by-combo-box-drop-downs/index.njk' %}
+{% include path + 'partials/17.navigate-by-checkboxes/index.njk' %}
+{% include path + 'partials/18.navigate-by-form-elements/index.njk' %}
+{% include path + 'partials/19.navigate-by-tables/index.njk' %}
 {% endblock %}
 
 {% block footer %}

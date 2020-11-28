@@ -1,0 +1,21 @@
+<section aria-describedby="{{params.id}}">
+  <h2 id="{{params.id}}">
+    {{params.title | safe}}
+  </h2>
+  {{params.description | safe}}
+
+  <h3 id="how-to-check-{{params.id}}">
+    How to check<span class="at-visually-hidden">: {{params.title}}</span>
+  </h3>
+  {{params.how | safe}}
+
+  <h3 id="what-to-check-{{params.id}}">
+    What to check<span class="at-visually-hidden">: {{params.title}}</span>
+  </h3>
+  {{params.what | safe}}
+
+  <h3 id="observations-{{params.id}}">
+    Observations<span class="at-visually-hidden">: {{params.title}}</span>
+  </h3>
+  {{- params.observations | safe -}}
+</section>

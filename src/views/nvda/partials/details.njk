@@ -2,12 +2,12 @@
   Details
 </h2>
 <dl class="at-inline">
-  <dt>URL:</dt><dd><a href="{{data.site.http}}://{{data.site.url}}/">{{data.site.url}}</a></dd>
-  {% if data.page and (data.page.name !== 'Home') %}
-    <dt>Page:</dt><dd><a href="{{data.site.http}}://{{data.site.url}}{{data.page.url}}/">{{data.page.url}}</a></dd>
+  <dt>URL:</dt><dd><a href="{{details.site.http}}://{{details.site.url}}/">{{details.site.url}}</a></dd>
+  {% if details.page and (details.page.name !== 'Home') %}
+    <dt>Page:</dt><dd><a href="{{details.site.http}}://{{details.site.url}}{{details.page.url}}/">{{details.page.url}}</a></dd>
   {% endif %}
-  <dt>Date:</dt><dd>{{data.date}}</dd>
-  <dt>Tester:</dt><dd><a href="{{data.tester.url}}">{{data.tester.name}}</a></dd>
-  <dt>Browser:</dt><dd>{{data.assistiveTech.browser}}</dd>
-  <dt>{{data.assistiveTech.name}}:</dt><dd>{{data.assistiveTech.version}}</dd>
+  <dt>Date:</dt><dd>{{details.date}}</dd>
+  <dt>Tester:</dt><dd><a href="{{details.tester.url}}">{{details.tester.name}}</a></dd>
+  <dt>Browser:</dt><dd>{{details.assistiveTech.browser}}</dd>
+  <dt>{{details.assistiveTech.name}}:</dt><dd>{{details.assistiveTech.version}}</dd>
 </dl>

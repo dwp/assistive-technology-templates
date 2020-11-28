@@ -1,0 +1,20 @@
+{% from "components/section/macro.njk" import section %}
+
+{% macro buildSection(path) %}
+
+{% from path + '_config.njk' import title, id, description %}
+{% from path + '_how-to-check.njk' import how %}
+{% from path + '_what-to-check.njk' import what %}
+{% from path + '_observations.njk' import observations %}
+
+{% set params = {
+  title: title,
+  id: id,
+  description: description,
+  what: what,
+  how: how,
+  observations: observations
+} %}
+{{ section(params) }}
+
+{% endmacro %}

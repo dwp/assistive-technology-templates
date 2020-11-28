@@ -18,18 +18,18 @@
         <h1 id="{{details.assistiveTech.id}}-testing">
           {{details.assistiveTech.name}} Testing
         </h1>
-        {% block headerContent %}{% endblock %}
+        {%- block headerContent -%}{%- endblock -%}
       </header>
 
-      {% block nav %}{% endblock %}
+      {%- block nav -%}{%- endblock -%}
 
       <main id="main" role="main">
-        {% block content %}{% endblock %}
-        {% include 'components/back-to-top/template.njk' %}
+        {%- block content -%}{%- endblock -%}
+        {%- include 'components/back-to-top/template.njk' -%}
       </main>
       
       <footer role="contentinfo">
-        {% block footer %}{% endblock %}
+        {%- block footer -%}{%- endblock -%}
       </footer>
     </div>
   </body>

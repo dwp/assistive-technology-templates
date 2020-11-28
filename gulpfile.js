@@ -45,7 +45,7 @@ gulp.task('nunjucks:compile', () => {
       { name: 'moo' },
       { env: new nunjucksLib.Environment(new nunjucksLib.FileSystemLoader('src')) }
     ))
-    .pipe(formatHtml())
+    .pipe(formatHtml({ max_preserve_newlines: '-1' }))
     .pipe(gulp.dest('html'))
 })
 

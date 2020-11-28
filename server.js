@@ -19,7 +19,7 @@ app.get(/^([^.]+)$/, (req, res, next) => {
   if (path === '') {
     path = 'index'
   }
-  res.render(`views/${path}/index.njk`)
+  res.render(`views/${path}/${path}.njk`)
 })
 
 app.listen(3000)

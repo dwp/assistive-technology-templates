@@ -3,6 +3,9 @@ const nodemon = require('gulp-nodemon')
 const sass = require('gulp-sass')
 sass.compiler = require('node-sass')
 const clean = require('gulp-clean')
+const nunjucksLib = require('nunjucks')
+const nunjucks = require('gulp-nunjucks')
+const formatHtml = require('gulp-format-html')
 
 gulp.task('nodemon', (done) => {
   return nodemon({
@@ -19,7 +22,8 @@ gulp.task('nodemon', (done) => {
 
 gulp.task('sass:compile', () => {
   return gulp.src('./src/sass/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+
     .pipe(gulp.dest('./src/styles'))
 })
 
@@ -30,6 +34,18 @@ gulp.task('sass:watch', (done) => {
 gulp.task('clean', () => {
   return gulp.src('src/css', { read: false, allowEmpty: true })
     .pipe(clean())
+})
+
+gulp.task('nunjucks:compile', () => {
+  return gulp.src(['src/views/nvda/nvda.njk'])
+    .pipe(nunjucks.compile(
+      { name: 'moo' },
+      {
+        env: new nunjucksLib.Environment(new nunjucksLib.FileSystemLoader('src'))
+      }
+    ))
+    .pipe(formatHtml())
+    .pipe(gulp.dest('html'))
 })
 
 gulp.task('default', gulp.series(

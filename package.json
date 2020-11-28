@@ -4,7 +4,8 @@
   "description": "DWP Assistive Technology Templates",
   "main": "index.njk",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp nunjucks:compile"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,9 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
+    "gulp-format-html": "^1.2.5",
     "gulp-nodemon": "^2.5.0",
+    "gulp-nunjucks": "^5.1.0",
     "gulp-sass": "^4.1.0",
     "node-sass": "^5.0.0",
     "standard": "^15.0.0"

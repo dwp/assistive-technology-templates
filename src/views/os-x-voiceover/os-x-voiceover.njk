@@ -1,0 +1,37 @@
+{% extends 'views/layouts/base.njk' %}
+
+{% set path = 'views/os-x-voiceover/' %}
+{% from path + 'config.njk' import details %}
+
+{% block headerContent %}
+{% include path + 'partials/details.njk' %}
+{% include path + 'partials/about-this-document.njk' %}
+{% endblock %}
+
+{% block nav %}
+{% include path + 'partials/nav.njk' %}
+{% endblock %}
+
+{% block content %}
+{% include path + 'partials/1.read-all-page-content/index.njk' %}
+{% include path + 'partials/2.rotor/index.njk' %}
+{% include path + 'partials/3.landmarks-present/index.njk' %}
+{% include path + 'partials/4.dynamic-content/index.njk' %}
+{% include path + 'partials/5.validation-errors/index.njk' %}
+{% include path + 'partials/6.page-title-is-descriptive/index.njk' %}
+{% include path + 'partials/7.links-make-sense-out-of-context/index.njk' %}
+{% include path + 'partials/8.no-automatic-change-of-context/index.njk' %}
+{% include path + 'partials/9.bypass-blocks/index.njk' %}
+{% include path + 'partials/10.navigate-by-landmarks/index.njk' %}
+{% include path + 'partials/11.navigate-by-headings/index.njk' %}
+{% include path + 'partials/12.navigate-by-links/index.njk' %}
+{% include path + 'partials/13.navigate-by-lists/index.njk' %}
+{% include path + 'partials/14.navigate-by-form-elements/index.njk' %}
+{% include path + 'partials/15.navigate-by-tables/index.njk' %}
+{% endblock %}
+
+{% block footer %}
+<a href="https://github.com/dwp/assistive-technology-templates">
+  DWP {{data.assistiveTech.name}} Testing Template version 1.0
+</a>
+{% endblock %}

@@ -37,7 +37,10 @@ gulp.task('clean', () => {
 })
 
 gulp.task('nunjucks:compile', () => {
-  return gulp.src(['src/views/nvda/nvda.njk'])
+  return gulp.src([
+    'src/views/nvda/nvda.njk',
+    'src/views/os-x-voiceover/os-x-voiceover.njk'
+  ])
     .pipe(nunjucks.compile(
       { name: 'moo' },
       {

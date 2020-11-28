@@ -13,7 +13,7 @@ gulp.task('nodemon', (done) => {
     ignore: ['.git', 'node_modules/**/node_modules'],
     watch: ['src/', 'server.js'],
     env: { NODE_ENV: 'development' },
-    ext: 'js, json, njk'
+    ext: 'js, json, njk, css'
   })
     .on('quit', () => {
       process.exit(0)
@@ -43,9 +43,7 @@ gulp.task('nunjucks:compile', () => {
   ])
     .pipe(nunjucks.compile(
       { name: 'moo' },
-      {
-        env: new nunjucksLib.Environment(new nunjucksLib.FileSystemLoader('src'))
-      }
+      { env: new nunjucksLib.Environment(new nunjucksLib.FileSystemLoader('src')) }
     ))
     .pipe(formatHtml())
     .pipe(gulp.dest('html'))

@@ -3,7 +3,7 @@
   <head>
 
     <meta charset="utf-8">
-    <title>{{data.assistiveTech.name}} test from {{data.date}} - {{data.site.name}}</title>
+    <title>{{details.assistiveTech.name}} test from {{details.date}} - {{details.site.name}}</title>
     <meta name="description" content="{{template.title}}">
     <style>
       {# Put CSS in page so it works when downloaded #}
@@ -15,8 +15,8 @@
     {% include 'components/skip-link/template.njk' %}
     <div class="at-container">
       <header role="banner">
-        <h1 id="{{data.assistiveTech.id}}-testing">
-          {{data.assistiveTech.name}} Testing
+        <h1 id="{{details.assistiveTech.id}}-testing">
+          {{details.assistiveTech.name}} Testing
         </h1>
         {% block headerContent %}{% endblock %}
       </header>

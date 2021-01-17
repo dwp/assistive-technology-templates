@@ -1,0 +1,22 @@
+{%- set what -%}
+<p>
+  Confirm that:
+  <ul>
+    <li>
+      leading whitespace does not cause a validation error
+    </li>
+    <li>
+      trailing whitespace does not cause a validation error
+    </li>
+    <li>
+      whitespace between characters in format specific fields does not cause a 
+      validation error if when removed the format would otherwise be correct
+    </li>
+    <li>
+      if there is an expected amount of characters, such as a sort code, 
+      the field does not count whitespace characters towards the total and therefore 
+      prevent the user from inputting their actual information
+    </li>
+  </ul>
+</p>
+{%- endset -%}

@@ -1,0 +1,30 @@
+{%- set how -%}
+<p>
+  For each text field which has an expected format, do the following:
+</p>
+
+<ol>
+  <li>
+    Fill the field in using voice only. You can speak words, and you can use 
+    any of the following commands:
+    <ul>
+      <li><span class="at-keys">"select all"</span> - highlights everything inside the field</li>
+      <li><span class="at-keys">"select [word]"</span> - highlights a specified word</li>
+      <li><span class="at-keys">"uppercase selected"</span> - converts highlighted to uppercase</li>
+      <li><span class="at-keys">"lowercase selected"</span> - converts highlighted to lowercase</li>
+      <li><span class="at-keys">"capitalise selected"</span> - converts highlighted to title case</li>
+      <li><span class="at-keys">"deselect that"</span> - deselects any highlighted text</li>
+      <li><span class="at-keys">"delete selected"</span> - deletes any highlighted text</li>
+      <li><span class="at-keys">"undo that"</span> - undoes the last action</li>
+      <li><span class="at-keys">"move left"</span> - move the cursor one character to the left</li>
+      <li><span class="at-keys">"move right"</span> - move the cursor one character to the right</li>
+      <li><span class="at-keys">"at sign"</span> - input an at (@) symbol</li>
+      <li><span class="at-keys">"full stop"</span> - input a full stop (.) symbol</li>
+      <li><span class="at-keys">"numeral [number]"</span> - forces Voice Control to input a number rather than a word</li>
+    </ul>
+  </li>
+  <li>
+    Submit the form and check for validation errors on the field.
+  </li>
+</ol>
+{%- endset -%}

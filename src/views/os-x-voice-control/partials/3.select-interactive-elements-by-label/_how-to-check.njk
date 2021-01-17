@@ -1,0 +1,22 @@
+{%- set how -%}
+<ol>
+  <li>
+    Load the page.
+  </li>
+  <li>
+    For each interactive element visible, say <span class="at-keys">"click [label]"</span>.
+    For example, if you have a radio button which is labelled 'yes', say <span class="at-keys">"click yes"</span>.
+  </li>
+  <li>
+    If there is more than 1 interactie element visible which has the same label, 
+    Voice Control will give you the option to select by number. If this happens, 
+    say the number of the element you want to select.
+  </li>
+  <li>
+    Once you have selected each visible interactive element, say <span class="at-keys">"scroll down"</span>
+  </li>
+  <li>
+    Repeat steps 2 to 4 until you have tested every interactive element.
+  </li>
+</ol>
+{%- endset -%}

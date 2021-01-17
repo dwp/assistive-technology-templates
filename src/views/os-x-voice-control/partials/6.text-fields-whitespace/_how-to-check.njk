@@ -1,0 +1,27 @@
+{%- set how -%}
+<p>
+  You don't need to use Voice Control for these checks as they are just simulating 
+  common problems. For each text field which has validation, do the following:
+</p>
+<ol>
+  <li>
+    Fill in the text field as expected, create leading whitespace by adding a space character at the start.
+  </li>
+  <li>
+    Submit the form and check validation.
+  </li>
+  <li>
+    Remove the space at the front, then create trailing whitespace by adding a space character to the end.
+  </li>
+  <li>
+    Submit the form and check validation.
+  </li>
+  <li>
+    Remove the space at the end, and add whitespace between characters when there 
+    is an expected format. For example, an email address such as 'your&nbsp;name&nbsp;@&nbsp;gmail&nbsp;.com'
+  </li>
+  <li>
+    Submit the form and check validation.
+  </li>
+</ol>
+{%- endset -%}

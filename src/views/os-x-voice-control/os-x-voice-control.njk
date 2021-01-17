@@ -1,0 +1,32 @@
+{% extends 'views/layouts/base.njk' -%}
+
+{% set path = 'views/os-x-voice-control/' %}
+{% from path + 'config.njk' import details %}
+
+{% block headerContent %}
+{%- include path + 'partials/details.njk' -%}
+{%- include path + 'partials/about-this-document.njk' -%}
+{% endblock %}
+
+{% block nav %}
+{%- include path + 'partials/nav.njk' -%}
+{% endblock %}
+
+{% block content %}
+{%- include path + 'partials/1.read-all-page-content/index.njk' -%}
+{%- include path + 'partials/2.select-interactive-elements-by-number/index.njk' -%}
+{%- include path + 'partials/3.select-interactive-elements-by-label/index.njk' -%}
+{%- include path + 'partials/4.navigate-by-form-fields/index.njk' -%}
+{%- include path + 'partials/5.text-fields-expected-format/index.njk' -%}
+{%- include path + 'partials/6.text-fields-whitespace/index.njk' -%}
+{%- include path + 'partials/7.text-fields-case-sensitive/index.njk' -%}
+{%- include path + 'partials/8.text-fields-copy-and-paste/index.njk' -%}
+{%- include path + 'partials/9.navigate-back-and-forwards/index.njk' -%}
+
+{% endblock %}
+
+{% block footer %}
+<a href="https://github.com/dwp/assistive-technology-templates">
+  DWP {{data.assistiveTech.name}} Testing Template version 1.0
+</a>
+{% endblock %}

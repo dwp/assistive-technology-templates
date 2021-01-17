@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Voice Control test from [date] - [site name]</title>
+  <meta name="description" content="">
+  <style>
+    html {
+      font-family: sans-serif;
+      font-size: 1em;
+      padding: 0;
+      margin: 0
+    }
+
+    body {
+      padding: 0;
+      margin: 0
+    }
+
+    main {
+      position: relative
+    }
+
+    h1 {
+      font-size: 3rem
+    }
+
+    h2 {
+      font-size: 2.25rem
+    }
+
+    h3 {
+      font-size: 1.5rem
+    }
+
+    h4 {
+      font-size: 1.1875rem
+    }
+
+    li,
+    a,
+    p,
+    dt,
+    dl,
+    dd,
+    span {
+      font-size: 1.1875rem
+    }
+
+    footer {
+      margin-top: 5rem
+    }
+
+    nav,
+    section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #a7a7a7
+    }
+
+    a:focus {
+      outline: 3px solid transparent;
+      color: #0b0c0c;
+      background-color: #ffdd00;
+      box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+      text-decoration: none
+    }
+
+    section:last-of-type {
+      border: 0;
+      padding-bottom: 0
+    }
+
+    .at-container {
+      width: 100%;
+      max-width: 660px;
+      margin: auto
+    }
+
+    .at-keys {
+      font-family: monospace;
+      color: #c74424;
+      background-color: #fdf4f2;
+      padding-left: .5em;
+      padding-right: .5em
+    }
+
+    dl.at-inline dd {
+      display: inline;
+      margin: 0
+    }
+
+    dl.at-inline dd:after {
+      display: block;
+      content: ''
+    }
+
+    dl.at-inline dt {
+      font-weight: 700;
+      display: inline-block;
+      min-width: 10rem
+    }
+
+    .at-back-to-top__icon {
+      padding-right: .5rem
+    }
+
+    @media screen and (min-width: 1080px) {
+      .at-back-to-top {
+        position: absolute;
+        top: 120vh;
+        bottom: 0rem;
+        left: -10rem;
+        padding: 0
+      }
+
+      .at-back-to-top__link {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 90vh;
+        padding: 0
+      }
+    }
+
+    .at-skip-link {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      -webkit-clip-path: inset(50%);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: block;
+      padding: 10px 15px
+    }
+
+    .at-skip-link:focus {
+      text-decoration: underline;
+      position: static;
+      width: auto;
+      height: auto;
+      margin: inherit;
+      overflow: visible;
+      clip: auto;
+      -webkit-clip-path: none;
+      clip-path: none;
+      white-space: inherit;
+      outline: 3px solid #ffdd00;
+      outline-offset: 0
+    }
+
+    .at-visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      -webkit-clip-path: inset(50%);
+      clip-path: inset(50%);
+      border: 0;
+      white-space: nowrap
+    }
+  </style>
+</head>
+
+<body id="top">
+  <a class="at-skip-link" href="#main"> Skip to main content </a>
+  <div class="at-container">
+    <header role="banner">
+      <h1 id="voice-control-testing"> Voice Control Testing </h1>
+      <h2 id="details"> Details </h2>
+      <dl class="at-inline">
+        <dt>URL:</dt>
+        <dd>
+          <a href="[http or https]://www.[url].[domain]/">www.[url].[domain]</a>
+        </dd>
+        <dt>Date:</dt>
+        <dd>[date]</dd>
+        <dt>Tester:</dt>
+        <dd>
+          <a href="[tester contact url]">[tester name]</a>
+        </dd>
+        <dt>Browser:</dt>
+        <dd>[browser and version]</dd>
+        <dt>Voice Control:</dt>
+        <dd>[assistive tech version]</dd>
+      </dl>
+      <h2 id="about-this-document"> About this document </h2>
+      <p> Voice Control should always be used with the Safari browser. Using it with any other browser may cause unexpected behaviour. For example, when using Google Chrome, if you say 'show numbers', you may find that in none of the web page is tagged for interaction. </p>
+      <p> This Voice Control test is designed to test whether your website or service is likely to work using common functions of the Voice Control screenreader. It will not tell you if your service will work for every user, but it will help you get an understanding as to how well you can expect your service to work for Voice Control users. </p>
+      <p> You should also test your service with real users of Voice Control and other assistive technologies. </p>
+    </header>
+    <nav role="navigation">
+      <h2 id="tests"> Navigation </h2>
+      <ul>
+        <li>
+          <a href="#read-all-page-content">Read all page content</a>
+        </li>
+        <li>
+          <a href="#select-interactive-elements-by-number">Select interactive elements by number</a>
+        </li>
+        <li>
+          <a href="#select-interactive-elements-by-label">Select interactive elements by label</a>
+        </li>
+        <li>
+          <a href="#navigate-by-form-fields">Navigate by form fields</a>
+        </li>
+        <li>
+          <a href="#text-fields-expected-format">Text fields - expected format</a>
+        </li>
+        <li>
+          <a href="#text-fields-whitespace">Text fields - whitespace</a>
+        </li>
+        <li>
+          <a href="#text-fields-case-sensitive">Text fields - case sensitive</a>
+        </li>
+        <li>
+          <a href="#text-fields-copy-and-paste">Text fields - copy and paste</a>
+        </li>
+        <li>
+          <a href="#navigate-back-and-forwards">Navigate back and forwards</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main" role="main">
+      <section aria-describedby="read-all-page-content">
+        <h2 id="read-all-page-content"> Read all page content </h2>
+        <p> Confirm that all the content on the page can be read by just scrolling up and down, and that no horizontal scrolling is required. </p>
+        <p> WCAG only allows horizontal scrolling for certain types of content if it is absolutely necessary. If you do have to horizontally scroll to see some content, make sure it is on the following exception list: </p>
+        <ul>
+          <li>Images required for understanding, such as a map or diagram</li>
+          <li>Video</li>
+          <li>Games</li>
+          <li>Presentations</li>
+          <li>Data tables, but not individual cells</li>
+          <li>Interfaces where it is necessary to keep the toolbars in view while manipulating content</li>
+        </ul>
+        <h3 id="how-to-check-read-all-page-content"> How to check<span class="at-visually-hidden">: Read all page content</span>
+        </h3>
+        <ol>
+          <li> Load the page. Make sure no content is missing off the left or right of the page. </li>
+          <li> Say <span class="at-keys">"scroll down"</span> to scroll down, and again check for truncated content. </li>
+          <li> Keep using the <span class="at-keys">"scroll down"</span> command and repeating the check until you get to the bottom of the page. </li>
+          <li> At the bottom of the page, say <span class="at-keys">"scroll up"</span> and make sure you can scroll back to the top in increments the same way. </li>
+          <li> Once you're back at the top, say <span class="at-keys">"scroll to bottom"</span> and make sure when the page stops scrolling you are at the bottom of the page. </li>
+          <li> Use the command <span class="at-keys">"scroll to top"</span> and make sure when the page stops scrolling you are back at the top of the page. </li>
+        </ol>
+        <h3 id="what-to-check-read-all-page-content"> What to check<span class="at-visually-hidden">: Read all page content</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> all of the content can be observed and read just by scrolling up and down </li>
+          <li> if you cannot read some content without scrolling horizontally, make sure it is content defined in the exception list </li>
+        </ul>
+        </p>
+        <h3 id="observations-read-all-page-content"> Observations<span class="at-visually-hidden">: Read all page content</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="select-interactive-elements-by-number">
+        <h2 id="select-interactive-elements-by-number"> Select interactive elements by number </h2>
+        <p> Confirm that all interactive elements are tagged by Voice Control. </p>
+        <p> Interactive elements are anything the user might click on to do something. For example: </p>
+        <ul>
+          <li>links</li>
+          <li>buttons</li>
+          <li>text inputs</li>
+          <li>radio buttons</li>
+          <li>checkboxes</li>
+          <li>drop downs</li>
+        </ul>
+        <h3 id="how-to-check-select-interactive-elements-by-number"> How to check<span class="at-visually-hidden">: Select interactive elements by number</span>
+        </h3>
+        <ol>
+          <li> Load the page. </li>
+          <li> Say <span class="at-keys">"show numbers"</span> to highlight all interactive elements. </li>
+          <li> Say the name of the number you which to select. For example: Say <span class="at-keys">"five"</span> or <span class="at-keys">"choose five"</span> to select the element tagged as 5. </li>
+          <li> Repeat for each interactive element visible on the page. </li>
+          <li> After you have tested each interactive element you can see, say <span class="at-keys">"scroll down"</span> and repeat steps 2 to 4 until you have checked every interactive element. </li>
+        </ol>
+        <h3 id="what-to-check-select-interactive-elements-by-number"> What to check<span class="at-visually-hidden">: Select interactive elements by number</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> every interactive element is assigned a number by Voice Control </li>
+          <li> every interactive element behaves as expected when selecting it by number </li>
+        </ul>
+        </p>
+        <h3 id="observations-select-interactive-elements-by-number"> Observations<span class="at-visually-hidden">: Select interactive elements by number</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="select-interactive-elements-by-label">
+        <h2 id="select-interactive-elements-by-label"> Select interactive elements by label </h2>
+        <p> Confirm that all interactive elements work using Voice Control's 'say what you see' functionality. </p>
+        <p> Interactive elements are anything the user might click on to do something. For example: </p>
+        <ul>
+          <li>links</li>
+          <li>buttons</li>
+          <li>text inputs</li>
+          <li>radio buttons</li>
+          <li>checkboxes</li>
+          <li>drop downs</li>
+        </ul>
+        <h3 id="how-to-check-select-interactive-elements-by-label"> How to check<span class="at-visually-hidden">: Select interactive elements by label</span>
+        </h3>
+        <ol>
+          <li> Load the page. </li>
+          <li> For each interactive element visible, say <span class="at-keys">"click [label]"</span>. For example, if you have a radio button which is labelled 'yes', say <span class="at-keys">"click yes"</span>. </li>
+          <li> If there is more than 1 interactie element visible which has the same label, Voice Control will give you the option to select by number. If this happens, say the number of the element you want to select. </li>
+          <li> Once you have selected each visible interactive element, say <span class="at-keys">"scroll down"</span>
+          </li>
+          <li> Repeat steps 2 to 4 until you have tested every interactive element. </li>
+        </ol>
+        <h3 id="what-to-check-select-interactive-elements-by-label"> What to check<span class="at-visually-hidden">: Select interactive elements by label</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> every interactive element can be selected by the text presented to the user </li>
+          <li> every interactive element behaves as expected when selecting it by label </li>
+        </ul>
+        </p>
+        <h3 id="observations-select-interactive-elements-by-label"> Observations<span class="at-visually-hidden">: Select interactive elements by label</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="navigate-by-form-fields">
+        <h2 id="navigate-by-form-fields"> Navigate by form fields </h2>
+        <p> Confirm that the page can be navigated by form fields and that they are in a logical reading order. </p>
+        <p> Note that Voice Over considers fields to be text inputs, textareas and select boxes, it does not consider radio buttons or checkboxes. If go to next field does not focus radio buttons or checkboxes, this is the default expected behaviour. </p>
+        <h3 id="how-to-check-navigate-by-form-fields"> How to check<span class="at-visually-hidden">: Navigate by form fields</span>
+        </h3>
+        <ol>
+          <li> Load the page. </li>
+          <li> Say <span class="at-keys">"go to next field"</span> to focus the first field on the page. </li>
+          <li> Repeat the command to move through each of the fields. </li>
+          <li> When you get to the last field on the page, say <span class="at-keys">"go to previous field"</span> and repeat the test in reverse until you get back to the first field. </li>
+        </ol>
+        <h3 id="what-to-check-navigate-by-form-fields"> What to check<span class="at-visually-hidden">: Navigate by form fields</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> every form field can be focussed </li>
+          <li> it is obvious which field is focussed at all times </li>
+          <li> focussing a field does not cause a change of context, such as submitting the form or redirecting to another page. </li>
+          <li> every element is selected in a logical reading order. Left-to-right and top-to-bottom. </li>
+          <li> no element is skipped or focussed in the wrong order </li>
+        </ul>
+        </p>
+        <h3 id="observations-navigate-by-form-fields"> Observations<span class="at-visually-hidden">: Navigate by form fields</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="text-fields-expected-format">
+        <h2 id="text-fields-expected-format"> Text fields - expected format </h2>
+        <p> Confirm that all form fields can be edited easily to meet the format expected by the application. For example, an email address or National Insurance number. </p>
+        <p> If you are unsure how to input a particular symbol, you can <a href="https://support.apple.com/guide/mac-help/commands-for-dictating-text-on-mac-mh40695/mac"> view all commands for dictating text on Apples website</a>. </p>
+        <h3 id="how-to-check-text-fields-expected-format"> How to check<span class="at-visually-hidden">: Text fields - expected format</span>
+        </h3>
+        <p> For each text field which has an expected format, do the following: </p>
+        <ol>
+          <li> Fill the field in using voice only. You can speak words, and you can use any of the following commands: <ul>
+              <li>
+                <span class="at-keys">"select all"</span> - highlights everything inside the field
+              </li>
+              <li>
+                <span class="at-keys">"select [word]"</span> - highlights a specified word
+              </li>
+              <li>
+                <span class="at-keys">"uppercase selected"</span> - converts highlighted to uppercase
+              </li>
+              <li>
+                <span class="at-keys">"lowercase selected"</span> - converts highlighted to lowercase
+              </li>
+              <li>
+                <span class="at-keys">"capitalise selected"</span> - converts highlighted to title case
+              </li>
+              <li>
+                <span class="at-keys">"deselect that"</span> - deselects any highlighted text
+              </li>
+              <li>
+                <span class="at-keys">"delete selected"</span> - deletes any highlighted text
+              </li>
+              <li>
+                <span class="at-keys">"undo that"</span> - undoes the last action
+              </li>
+              <li>
+                <span class="at-keys">"move left"</span> - move the cursor one character to the left
+              </li>
+              <li>
+                <span class="at-keys">"move right"</span> - move the cursor one character to the right
+              </li>
+              <li>
+                <span class="at-keys">"at sign"</span> - input an at (@) symbol
+              </li>
+              <li>
+                <span class="at-keys">"full stop"</span> - input a full stop (.) symbol
+              </li>
+              <li>
+                <span class="at-keys">"numeral [number]"</span> - forces Voice Control to input a number rather than a word
+              </li>
+            </ul>
+          </li>
+          <li> Submit the form and check for validation errors on the field. </li>
+        </ol>
+        <h3 id="what-to-check-text-fields-expected-format"> What to check<span class="at-visually-hidden">: Text fields - expected format</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> if the field expects a certain format, that the format can be easily achieved using voice only. </li>
+          <li> you can submit the form with no validation errors. </li>
+        </ul>
+        </p>
+        <h3 id="observations-text-fields-expected-format"> Observations<span class="at-visually-hidden">: Text fields - expected format</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="text-fields-whitespace">
+        <h2 id="text-fields-whitespace"> Text fields - whitespace </h2>
+        <p> Confirm that whitespace does not cause validation errors, where possible. </p>
+        <p> Dictation software will often add whitespace characters after words when the user pauses for breath. It will also automatically add whitespaceon certain commands, for example. If you say <span class="at-keys">"numeral 1"</span> Voice Control will automatically add a space after the charcter. So, if you're entering the year you were born it end up being input as "1&nbsp;9&nbsp;5&nbsp;4". </p>
+        <h3 id="how-to-check-text-fields-whitespace"> How to check<span class="at-visually-hidden">: Text fields - whitespace</span>
+        </h3>
+        <p> You don't need to use Voice Control for these checks as they are just simulating common problems. For each text field which has validation, do the following: </p>
+        <ol>
+          <li> Fill in the text field as expected, create leading whitespace by adding a space character at the start. </li>
+          <li> Submit the form and check validation. </li>
+          <li> Remove the space at the front, then create trailing whitespace by adding a space character to the end. </li>
+          <li> Submit the form and check validation. </li>
+          <li> Remove the space at the end, and add whitespace between characters when there is an expected format. For example, an email address such as 'your&nbsp;name&nbsp;@&nbsp;gmail&nbsp;.com' </li>
+          <li> Submit the form and check validation. </li>
+        </ol>
+        <h3 id="what-to-check-text-fields-whitespace"> What to check<span class="at-visually-hidden">: Text fields - whitespace</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> leading whitespace does not cause a validation error </li>
+          <li> trailing whitespace does not cause a validation error </li>
+          <li> whitespace between characters in format specific fields does not cause a validation error if when removed the format would otherwise be correct </li>
+          <li> if there is an expected amount of characters, such as a sort code, the field does not count whitespace characters towards the total and therefore prevent the user from inputting their actual information </li>
+        </ul>
+        </p>
+        <h3 id="observations-text-fields-whitespace"> Observations<span class="at-visually-hidden">: Text fields - whitespace</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="text-fields-case-sensitive">
+        <h2 id="text-fields-case-sensitive"> Text fields - case sensitive </h2>
+        <p> Confirm that validation errors are not caused by the users use of capital letters. </p>
+        <p> For example, on a postcode field, the following should all be valid: </p>
+        <ul>
+          <li> SW1 2AA </li>
+          <li> sw1 2aa </li>
+          <li> Sw1 2Aa </li>
+        </ul>
+        <h3 id="how-to-check-text-fields-case-sensitive"> How to check<span class="at-visually-hidden">: Text fields - case sensitive</span>
+        </h3>
+        <p> You don't need to use Voice Control for these checks as they are just simulating common problems. For each text field which has validation, do the following: </p>
+        <ol>
+          <li> Fill the field using only uppercase letters </li>
+          <li> Submit the form and check validation. </li>
+          <li> Fill the field using only lowercase letters </li>
+          <li> Submit the form and check validation. </li>
+          <li> Fill the field using a mix of both uppercase and lowercase letters </li>
+          <li> Submit the form and check validation. </li>
+        </ol>
+        <h3 id="what-to-check-text-fields-case-sensitive"> What to check<span class="at-visually-hidden">: Text fields - case sensitive</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> using only uppercase letters does not impact validation </li>
+          <li> using only lowercase letters does not impact validation </li>
+          <li> using a mix of both uppercase and lowercase letters does not impact validation </li>
+        </ul>
+        </p>
+        <h3 id="observations-text-fields-case-sensitive"> Observations<span class="at-visually-hidden">: Text fields - case sensitive</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="text-fields-copy-and-paste">
+        <h2 id="text-fields-copy-and-paste"> Text fields - copy and paste </h2>
+        <p> Confirm that the user can paste clipboard data into text fields. </p>
+        <h3 id="how-to-check-text-fields-copy-and-paste"> How to check<span class="at-visually-hidden">: Text fields - copy and paste</span>
+        </h3>
+        <p> For each text field, copy what you might expect to see in the field to your clipboard, then do the following: </p>
+        <ol>
+          <li> Load the page. </li>
+          <li> Say <span class="at-keys">"scroll down"</span> until the field you want to check is on the screen. </li>
+          <li> Say <span class="at-keys">"show numbers"</span> followed by the number of the field you wish to edit. </li>
+          <li> Say <span class="at-keys">"paste that"</span> to insert the clipboard data into the text field. </li>
+        </ol>
+        <h3 id="what-to-check-text-fields-copy-and-paste"> What to check<span class="at-visually-hidden">: Text fields - copy and paste</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> clipboard data can be pasted into the field </li>
+          <li> the data pasted in is identical to what you copied </li>
+        </ul>
+        </p>
+        <h3 id="observations-text-fields-copy-and-paste"> Observations<span class="at-visually-hidden">: Text fields - copy and paste</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="navigate-back-and-forwards">
+        <h2 id="navigate-back-and-forwards"> Navigate back and forwards </h2>
+        <p> Confirm that the user can go back and forwards in the browser without errors if the page is part of a step-by-step journey. </p>
+        <h3 id="how-to-check-navigate-back-and-forwards"> How to check<span class="at-visually-hidden">: Navigate back and forwards</span>
+        </h3>
+        <p> Complete the step-by-step journey until you get to the page you want to test, then do the following: </p>
+        <ol>
+          <li> Say <span class="at-keys">"go back"</span> so the browser navigates to the previous screen. </li>
+          <li> Say <span class="at-keys">"go forwards"</span> so the browser navigates back the the page you are testing. </li>
+        </ol>
+        <h3 id="what-to-check-navigate-back-and-forwards"> What to check<span class="at-visually-hidden">: Navigate back and forwards</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> when you go back, the browser navigates back to the screen you were previously on </li>
+          <li> when you go back to the previous screen, the website does not break or force you to start the step-by-step journey again </li>
+          <li> when you go forwards, the browser navigates you back to the screen you're testing </li>
+          <li> when you go forwards to the page you were testing, the website does not break or force you to start the step-by-step journey again </li>
+        </ul>
+        </p>
+        <h3 id="observations-navigate-back-and-forwards"> Observations<span class="at-visually-hidden">: Navigate back and forwards</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <div class="at-back-to-top">
+        <a class="at-back-to-top__link" href="#top">
+          <svg aria-hidden="true" focusable="false" class="at-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg>Back to top
+        </a>
+      </div>
+    </main>
+    <footer role="contentinfo">
+      <a href="https://github.com/dwp/assistive-technology-templates"> DWP Testing Template version 1.0 </a>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{% set title = 'Text fields - case sensitive' %}
+{% set id = 'text-fields-case-sensitive' %}
+
+{% set description %}
+<p>
+  Confirm that validation errors are not caused by the users use of capital letters.
+</p>
+<p>
+  For example, on a postcode field, the following should all be valid:
+</p>
+<ul>
+  <li>
+    SW1 2AA
+  </li>
+  <li>
+    sw1 2aa
+  </li>
+  <li>
+    Sw1 2Aa
+  </li>
+</ul>
+{% endset %}

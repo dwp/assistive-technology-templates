@@ -40,7 +40,8 @@ gulp.task('nunjucks:compile', () => {
   return gulp.src([
     'src/views/nvda/nvda.njk',
     'src/views/os-x-voiceover/os-x-voiceover.njk',
-    'src/views/os-x-voice-control/os-x-voice-control.njk'
+    'src/views/os-x-voice-control/os-x-voice-control.njk',
+    'src/views/os-x-zoom/os-x-zoom.njk'
   ])
     .pipe(nunjucks.compile(
       { name: 'moo' },

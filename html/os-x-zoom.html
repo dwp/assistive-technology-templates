@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>OS X Zoom test from [date] - [site name]</title>
+  <meta name="description" content="">
+  <style>
+    html {
+      font-family: sans-serif;
+      font-size: 1em;
+      padding: 0;
+      margin: 0
+    }
+
+    body {
+      padding: 0;
+      margin: 0
+    }
+
+    main {
+      position: relative
+    }
+
+    h1 {
+      font-size: 3rem
+    }
+
+    h2 {
+      font-size: 2.25rem
+    }
+
+    h3 {
+      font-size: 1.5rem
+    }
+
+    h4 {
+      font-size: 1.1875rem
+    }
+
+    li,
+    a,
+    p,
+    dt,
+    dl,
+    dd,
+    span {
+      font-size: 1.1875rem
+    }
+
+    footer {
+      margin-top: 5rem
+    }
+
+    nav,
+    section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #a7a7a7
+    }
+
+    a:focus {
+      outline: 3px solid transparent;
+      color: #0b0c0c;
+      background-color: #ffdd00;
+      box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+      text-decoration: none
+    }
+
+    section:last-of-type {
+      border: 0;
+      padding-bottom: 0
+    }
+
+    .at-container {
+      width: 100%;
+      max-width: 660px;
+      margin: auto
+    }
+
+    .at-keys {
+      font-family: monospace;
+      color: #c74424;
+      background-color: #fdf4f2;
+      padding-left: .5em;
+      padding-right: .5em
+    }
+
+    dl.at-inline dd {
+      display: inline;
+      margin: 0
+    }
+
+    dl.at-inline dd:after {
+      display: block;
+      content: ''
+    }
+
+    dl.at-inline dt {
+      font-weight: 700;
+      display: inline-block;
+      min-width: 10rem
+    }
+
+    .at-back-to-top__icon {
+      padding-right: .5rem
+    }
+
+    @media screen and (min-width: 1080px) {
+      .at-back-to-top {
+        position: absolute;
+        top: 120vh;
+        bottom: 0rem;
+        left: -10rem;
+        padding: 0
+      }
+
+      .at-back-to-top__link {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 90vh;
+        padding: 0
+      }
+    }
+
+    .at-skip-link {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      -webkit-clip-path: inset(50%);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: block;
+      padding: 10px 15px
+    }
+
+    .at-skip-link:focus {
+      text-decoration: underline;
+      position: static;
+      width: auto;
+      height: auto;
+      margin: inherit;
+      overflow: visible;
+      clip: auto;
+      -webkit-clip-path: none;
+      clip-path: none;
+      white-space: inherit;
+      outline: 3px solid #ffdd00;
+      outline-offset: 0
+    }
+
+    .at-visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      -webkit-clip-path: inset(50%);
+      clip-path: inset(50%);
+      border: 0;
+      white-space: nowrap
+    }
+  </style>
+</head>
+
+<body id="top">
+  <a class="at-skip-link" href="#main"> Skip to main content </a>
+  <div class="at-container">
+    <header role="banner">
+      <h1 id="os-x-zoom-testing"> OS X Zoom Testing </h1>
+      <h2 id="details"> Details </h2>
+      <dl class="at-inline">
+        <dt>URL:</dt>
+        <dd>
+          <a href="[http or https]://www.[url].[domain]/">www.[url].[domain]</a>
+        </dd>
+        <dt>Date:</dt>
+        <dd>[date]</dd>
+        <dt>Tester:</dt>
+        <dd>
+          <a href="[tester contact url]">[tester name]</a>
+        </dd>
+        <dt>Browser:</dt>
+        <dd>[browser and version]</dd>
+        <dt>OS X Zoom:</dt>
+        <dd>[assistive tech version]</dd>
+      </dl>
+      <h2 id="about-this-document"> About this document </h2>
+      <p> Before tesing using OS X Zoom, you will need to configure the settings. </p>
+      <ol>
+        <li>Go to <span class="at-keys">System Preferences > Accessibility > Zoom</span>.</li>
+        <li> Turn on the option for <span class="at-keys">use keyboard shortcuts to zoom</span>. This will enable accurate zooming to the required level for the tests. </li>
+        <li>Turn on the option for <span class="at-keys">enable hover text</span>.</li>
+        <li>Select <span class="at-keys">Advanced</span> and then <span class="at-keys">Controls</span>.</li>
+        <li>Set the <span class="at-keys">Maximum Zoom</span> to 15. This will enable you to know when you are zoomed in to 15x.</li>
+      </ol>
+      <p> This OS X Zoom test is designed to test whether your website or service is likely to work using common functions of zoom software. It will not tell you if your service will work for every user, but it will help you get an understanding as to how well you can expect your service to work for OS X Zoom users. </p>
+      <p> You should also test your service with real users of OS X Zoom and other assistive technologies. </p>
+    </header>
+    <nav role="navigation">
+      <h2 id="tests"> Navigation </h2>
+      <ul>
+        <li>
+          <a href="#text-is-readable">Text is readable</a>
+        </li>
+        <li>
+          <a href="#images-are-clear-enough">Images are clear enough</a>
+        </li>
+        <li>
+          <a href="#text-on-hover-text">Text on hover text</a>
+        </li>
+        <li>
+          <a href="#images-on-hover-text">Images on hover text</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main" role="main">
+      <section aria-describedby="text-is-readable">
+        <h2 id="text-is-readable"> Text is readable </h2>
+        <p> Confirm that when zoomed in to 15x the text can still be read. </p>
+        <p> When zooming in, poor fonts or images of text can become unreadable as they become pixelated. </p>
+        <h3 id="how-to-check-text-is-readable"> How to check<span class="at-visually-hidden">: Text is readable</span>
+        </h3>
+        <ol>
+          <li> Use <span class="at-keys">"ALT + CMD + ="</span> to zoom in to 15x (as per the configuration). </li>
+          <li> Navigate around the entire page while zoomed in. </li>
+        </ol>
+        <h3 id="what-to-check-text-is-readable"> What to check<span class="at-visually-hidden">: Text is readable</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> all of the text is still readable </li>
+        </ul>
+        </p>
+        <h3 id="observations-text-is-readable"> Observations<span class="at-visually-hidden">: Text is readable</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="images-are-clear-enough">
+        <h2 id="images-are-clear-enough"> Images are clear enough </h2>
+        <p> Confirm that images which are important for context are clear at 15x. </p>
+        <p> Important images are those which are required for interactions such as icons, or those which are important for setting context, such as maps. </p>
+        <h3 id="how-to-check-images-are-clear-enough"> How to check<span class="at-visually-hidden">: Images are clear enough</span>
+        </h3>
+        <ol>
+          <li> Use <span class="at-keys">"ALT + CMD + ="</span> to zoom in to 15x (as per the configuration). </li>
+          <li> Navigate over each image on the page. </li>
+        </ol>
+        <h3 id="what-to-check-images-are-clear-enough"> What to check<span class="at-visually-hidden">: Images are clear enough</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> all icons are clear enough to distinguish at 15x. </li>
+          <li> all non-decorative images are clear enough to distinguish at 15x. </li>
+        </ul>
+        </p>
+        <h3 id="observations-images-are-clear-enough"> Observations<span class="at-visually-hidden">: Images are clear enough</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="text-on-hover-text">
+        <h2 id="text-on-hover-text"> Text on hover text </h2>
+        <p> Confirm that all text on the page works using the Hover Text feature. </p>
+        <p> Hover Text allows the user to view the text under the mouse pointer larger without having to zoom in. </p>
+        <h3 id="how-to-check-text-on-hover-text"> How to check<span class="at-visually-hidden">: Text on hover text</span>
+        </h3>
+        <ol>
+          <li> Hold down <span class="at-keys">"CMD"</span> and hover over each piece of text on the page. For long paragraphs you can scroll inside the hover text using the trackpad. </li>
+        </ol>
+        <h3 id="what-to-check-text-on-hover-text"> What to check<span class="at-visually-hidden">: Text on hover text</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> all text on the page works with the Hover Text feature </li>
+          <li> all text in the Hover Text feature matches the visible text on the page </li>
+        </ul>
+        </p>
+        <h3 id="observations-text-on-hover-text"> Observations<span class="at-visually-hidden">: Text on hover text</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <section aria-describedby="images-on-hover-text">
+        <h2 id="images-on-hover-text"> Images on hover text </h2>
+        <p> Confirm that all important images on the page works using the Hover Text feature. </p>
+        <p> Hover Text allows the user to view the alt text on images which may be too small for the user to distinguish. </p>
+        <h3 id="how-to-check-images-on-hover-text"> How to check<span class="at-visually-hidden">: Images on hover text</span>
+        </h3>
+        <ol>
+          <li> Hold down <span class="at-keys">"CMD"</span> and hover over each image on the page. For long alt text you can scroll inside the hover text using the trackpad. </li>
+        </ol>
+        <h3 id="what-to-check-images-on-hover-text"> What to check<span class="at-visually-hidden">: Images on hover text</span>
+        </h3>
+        <p> Confirm that:
+        <ul>
+          <li> all important images either show a text alternative with the Hover Text feature or that a text alternative is available in the visible page content. </li>
+          <li> any alt text which is presented using the Hover Feature is accurate and meaningful </li>
+        </ul>
+        </p>
+        <h3 id="observations-images-on-hover-text"> Observations<span class="at-visually-hidden">: Images on hover text</span>
+        </h3>
+        <p> [ Enter observations ] </p>
+      </section>
+      <div class="at-back-to-top">
+        <a class="at-back-to-top__link" href="#top">
+          <svg aria-hidden="true" focusable="false" class="at-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg>Back to top
+        </a>
+      </div>
+    </main>
+    <footer role="contentinfo">
+      <a href="https://github.com/dwp/assistive-technology-templates"> DWP Testing Template version 1.0 </a>
+    </footer>
+  </div>
+</body>
+
+</html>

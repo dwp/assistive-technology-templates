@@ -1,0 +1,27 @@
+{% extends 'views/layouts/base.njk' -%}
+
+{% set path = 'views/os-x-zoom/' %}
+{% from path + 'config.njk' import details %}
+
+{% block headerContent %}
+{%- include path + 'partials/details.njk' -%}
+{%- include path + 'partials/about-this-document.njk' -%}
+{% endblock %}
+
+{% block nav %}
+{%- include path + 'partials/nav.njk' -%}
+{% endblock %}
+
+{% block content %}
+{%- include path + 'partials/1.text-is-readable/index.njk' -%}
+{%- include path + 'partials/2.images-are-clear-enough/index.njk' -%}
+{%- include path + 'partials/3.text-on-hover-text/index.njk' -%}
+{%- include path + 'partials/4.images-on-hover-text/index.njk' -%}
+
+{% endblock %}
+
+{% block footer %}
+<a href="https://github.com/dwp/assistive-technology-templates">
+  DWP {{data.assistiveTech.name}} Testing Template version 1.0
+</a>
+{% endblock %}
